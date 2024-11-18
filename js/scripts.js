@@ -51,12 +51,6 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-    // Activate SimpleLightbox plugin for portfolio items
-    // new SimpleLightbox({
-    //     elements: '#portfolio a.portfolio-box'
-    // });
-
-
     fetch('tictactoe.py') 
                         .then(response => response.text())
                         .then(data => {
@@ -65,7 +59,6 @@ window.addEventListener('DOMContentLoaded', event => {
                         .catch(error => {
                             console.error('Error fetching the Python file:', error);
                             document.getElementById('python-code').textContent = error.message;
-
                         });
 
 });

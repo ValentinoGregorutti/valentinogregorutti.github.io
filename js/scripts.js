@@ -51,14 +51,24 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-    fetch('tictactoe.py') 
-                        .then(response => response.text())
-                        .then(data => {
-                            document.getElementById('python-code').textContent = data; // Display Python code as text
-                        })
-                        .catch(error => {
-                            console.error('Error fetching the Python file:', error);
-                            document.getElementById('python-code').textContent = error.message;
-                        });
+    fetch('tictactoe.py')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('python-code').textContent = data; // Display Python code as text
+        })
+        .catch(error => {
+            console.error('Error fetching the Python file:', error);
+            document.getElementById('python-code').textContent = error.message;
+        });
+        
+    fetch('freq32bit.asm')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('assembly-code').textContent = data; // Display assembly code as text
+        })
+        .catch(error => {
+            console.error('Error fetching the Assembly file:', error);
+            document.getElementById('assembly-code').textContent = error.message;
+        });
 
 });

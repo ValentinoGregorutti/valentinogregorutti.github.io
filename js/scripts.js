@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', event => {
             console.error('Error fetching the Python file:', error);
             document.getElementById('python-code').textContent = error.message;
         });
-        
+
     fetch('freq32bit.asm')
         .then(response => response.text())
         .then(data => {
@@ -69,6 +69,16 @@ window.addEventListener('DOMContentLoaded', event => {
         .catch(error => {
             console.error('Error fetching the Assembly file:', error);
             document.getElementById('assembly-code').textContent = error.message;
+        });
+
+    fetch('Program.cs')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('cs-code').textContent = data; // Display C# code as text
+        })
+        .catch(error => {
+            console.error('Error fetching the C# file:', error);
+            document.getElementById('cs-code').textContent = error.message;
         });
 
 });
